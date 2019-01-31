@@ -15,12 +15,15 @@
 			var input1 = document.getElementById("input1").value;
 			var input2 = document.getElementById("input2").value;
 			var result = document.getElementById("res");
+			input1 = parseInt(input1);
+			input2 = parseInt(input2);
 			if ((input1 < 1 || input1 > 100) || (input2 < 1 || input2 > 100))
 			{
 				res = "<div>enter values between 1 - 100</div>";
 				result.innerHTML = res;
 			}
 			else if (input2 < input1){
+				console.log(input2 , input1);
 				res = "<div>second number is larger than the first</div>";
 				result.innerHTML = res;
 			}
