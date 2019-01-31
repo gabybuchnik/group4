@@ -4,41 +4,41 @@
 	<title></title>
 </head>
 <body>
-	 <form onsubmit="return false">
-		<select id="food" multiple="true">
+	 <form>
+		<select id="food">
 			<option>hamburger</option>
 			<option>BBQ</option>
 			<option>salad</option>
 		</select>
 		<ol id="olist">
 		</ol>
-		<button onclick="add()">Add</button>
+		<input type="button" value="add" onclick="add()">
 	</form>
 	<script type="text/javascript">
+		var count = 0;
 		var food = document.getElementById("food");
 		var arrFood = [];
 		for (var i=0; i<food.length; i++)
 		{
 			arrFood.push(food[i].innerHTML);
 		}
-		// var beverage = ['beer', 'vodka', 'coke'];
-		// var colors = ['blue', 'green', 'black'];
+
 		function add(){
-			var count = 0;
 			var ol = document.getElementById("olist");
-			ol.innerText = "food";
-			arrFood.forEach(function(item,index){
-				var selected = food.options[index].selected;
+			//ol.innerText = "food";
+			for(var i = 0; i < arrFood.length; i++)
+			{
+				var selected = food.options[i].selected;
 				if (selected)
 				{
 					var li = document.createElement("li");
-					var str = 'My ' + (count+1) + switchSuffix(count + 1) + ' choice is ' + item;
+					var str = 'My ' + (count+1) + switchSuffix(count + 1) + ' choice is ' + arrFood[i];
 					var liText = document.createTextNode(str);
 					li.appendChild(liText);
 					ol.appendChild(li);
 					count++;
 				}
-			})
+			}
 		}
 		
 		function switchSuffix(num){
