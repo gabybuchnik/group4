@@ -1,0 +1,56 @@
+#my-app{
+    position: absolute;
+    top:calc(50% - 60px);
+    left:calc(50% - 200px);
+    width:400px;
+    height: 120px;
+    border:3px solid rgb(131, 131, 131);
+    border-radius: 20px;
+    background-color: lightgray;
+}
+#counter{
+    font-size: 3em;
+    text-align: center;
+    font-weight: bold;
+}
+.timer-button-wrapper{
+    display: flex;
+    justify-content: space-around;
+}
+.timer-button{
+    margin-top:20px;
+    padding: 5px 30px;
+    cursor: pointer;
+    font-weight: bold;
+}
+#timer-button-start{
+    background-color: darkseagreen;
+    border:1px solid green;
+}
+#timer-button-stop{
+    background-color: rgb(255, 220, 145);
+    border:1px solid rgb(255, 0, 0);
+}
+#timer-button-reset{
+    background-color: rgb(145, 202, 255);
+    border:1px solid rgb(0, 60, 255);
+}
+#top{
+    position: absolute;
+    top: calc(50% - 100px);
+    left: calc(50% - 200px);
+    width: 400px;
+    height: 50px;
+}
+input[type="radio"]{
+    width: 1.3em;
+    height: 1.3em;
+}
+label{
+    font-size: 1.3em;
+}
+#start-from{
+    width: 7em;
+    margin-left: 10px;
+    height: 1.3em;
+}

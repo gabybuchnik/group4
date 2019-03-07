@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="top">
+        <input type="radio" name="timer" id="timer" value="timer" checked>
+        <label for="timer">Timer</label>
+        <input type="radio" name="timer" id="countdown" value="countdown">
+        <label for="countdown">Countdown</label>
+        <input id="start-from" type="number" placeholder="start from ..." disabled>
+    </div>
+    <div id="my-app">
+        <div id="counter">00:00</div>
+        <div class="timer-button-wrapper">
+            <button id="timer-button-start" class="timer-button">Start</button>
+            <button id="timer-button-stop" class="timer-button">Stop</button>
+            <button id="timer-button-reset" class="timer-button">Reset</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
