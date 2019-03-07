@@ -4,16 +4,17 @@ var resetBtn = document.getElementById("timer-button-reset");
 var countdown = document.getElementById("countdown");
 var startFrom = document.getElementById("start-from");
 var timer = document.getElementById("timer");
+var m = 0, s = 0;
 
 var Counter = (function () {
-    var m = 0 , s = 0;
+
     var interval;
     function start() {
         clearInterval(interval);
         if (countdown.checked && startFrom.value) {
             interval = setInterval(startCountDown, 1000);
         }
-        else {
+        else if (timer.checked) {
             interval = setInterval(startTimer, 1000);
         }
     }
@@ -61,11 +62,15 @@ function setDisable() {
 function removeDisable() {
     startFrom.removeAttribute("disabled");
 }
+function changeValue() {
+    m = startFrom.value;
+}
 
 startBtn.onclick = Counter.start;
 stopBtn.onclick = Counter.stop;
 resetBtn.onclick = Counter.reset;
 timer.onchange = setDisable;
-countdown.onchange = removeDisable
+countdown.onchange = removeDisable;
+startFrom.onchange = changeValue;
 
 
