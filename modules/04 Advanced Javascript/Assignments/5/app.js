@@ -1,15 +1,15 @@
-var startBtn = document.getElementById("timer-button-start");
-var stopBtn = document.getElementById("timer-button-stop");
-var resetBtn = document.getElementById("timer-button-reset");
-var countdown = document.getElementById("countdown");
-var startFrom = document.getElementById("start-from");
-var timer = document.getElementById("timer");
-var m = 0, s = 0;
+let startBtn = document.getElementById("timer-button-start");
+let stopBtn = document.getElementById("timer-button-stop");
+let resetBtn = document.getElementById("timer-button-reset");
+let countdown = document.getElementById("countdown");
+let startFrom = document.getElementById("start-from");
+let timer = document.getElementById("timer");
+let m = 0, s = 0;
 
-var Counter = (function () {
+const Counter = (() => {
 
     var interval;
-    function start() {
+    const start = () => {
         clearInterval(interval);
         if (countdown.checked && startFrom.value) {
             interval = setInterval(startCountDown, 1000);
@@ -18,16 +18,23 @@ var Counter = (function () {
             interval = setInterval(startTimer, 1000);
         }
     }
-    function stop() {
+    const stop = () => {
         clearInterval(interval);
     }
-    function reset() {
+    const reset = () => {
         clearInterval(interval);
-        s = m = 0;
+        if(timer.checked)
+        {
+            s = m = 0;
+        }
+       else{
+           m = startFrom.value;
+           s = 0;
+       }
         setPrefix();
         document.getElementById("counter").innerHTML = m + ":" + s;
     }
-    function startTimer() {
+    const startTimer = () => {
         setPrefix();
         document.getElementById("counter").innerHTML = m + ":" + s;
         s++;
@@ -36,7 +43,7 @@ var Counter = (function () {
             s = 0;
         }
     }
-    function startCountDown() {
+    const startCountDown = () => {
         if (s <= 0) {
             m--;
             s = 60;
@@ -45,7 +52,7 @@ var Counter = (function () {
         setPrefix();
         document.getElementById("counter").innerHTML = m + ":" + s;
     }
-    function setPrefix() {
+    const setPrefix = () => {
         s <= 9 ? s = ("0" + s).slice(-2) : s;
         m <= 9 ? m = ("0" + m).slice(-2) : m;
     }
@@ -56,13 +63,13 @@ var Counter = (function () {
     }
 })();
 
-function setDisable() {
+const setDisable = () => {
     startFrom.setAttribute("disabled", "disabled");
 }
-function removeDisable() {
+const removeDisable = () => {
     startFrom.removeAttribute("disabled");
 }
-function changeValue() {
+const changeValue = () => {
     m = startFrom.value;
 }
 
