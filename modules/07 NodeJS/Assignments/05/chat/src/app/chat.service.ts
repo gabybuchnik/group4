@@ -28,7 +28,7 @@ export class ChatService {
   updateMessage(messageId: string, message: string) {
     fetch("http://localhost:8000/?id=" + messageId, {
       method: 'PUT',
-      body: JSON.stringify({message}),
+      body: JSON.stringify({ message }),
       headers: { "Content-Type": "application/json" }
     }).then(res => res.json());
   }

@@ -21,8 +21,13 @@ app.get('/', (request, response) => {
 app.delete('/', (request, response) => {
     const id = Number(request.query.id);
     const chatIndex = getIndexById(chat, id);
-    chat.splice(chatIndex, 1);
-    responseJson(response, "ok");
+    if (chatIndex === 0) {
+        chat.splice(chatIndex, 1);
+        responseJson(response, "ok");
+    }
+    else {
+        responseJson(response, "id doesnt exist");
+    }
 });
 
 // Update
