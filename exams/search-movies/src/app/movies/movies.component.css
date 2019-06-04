@@ -1,0 +1,23 @@
+#results {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#movieFrom {
+    position: fixed;
+    background-color: brown;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 10px;
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}

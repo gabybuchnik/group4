@@ -1,0 +1,18 @@
+<form id="movieFrom" (submit)="onSubmit($event , input)">
+  <input id="search" type="text" placeholder="search movie..." minlength="3" #input>
+  <button>Submit</button>
+  <div *ngIf="!valid">
+    {{errMsg}}
+  </div>
+</form>
+
+<div id="results" *ngIf="movies.length">
+  <ul>
+    <li *ngFor="let movie of movies">
+      <img src={{movie.Poster}}>
+      <a href="https://www.imdb.com/title/{{movie.imdbID}}" target="_blank">{{movie.Title}}</a>
+    </li>
+  </ul>
+  <button (click)="renderMovies()" [disabled]="!hasMore">Load More...</button>
+  <span>page {{page - 1}}</span>
+</div>
