@@ -1,4 +1,4 @@
-<form #f="ngForm" (submit)="onSubmit(f)">
+<form id="movieFrom" #f="ngForm" (submit)="onSubmit(f)">
   <input id="search" name="search" type="text" placeholder="search movie..." (ngModel)="inputSearch" minlength="3">
   <button>Submit</button>
   <div *ngIf="!valid">

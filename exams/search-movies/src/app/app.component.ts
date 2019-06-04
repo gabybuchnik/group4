@@ -26,6 +26,7 @@ export class AppComponent {
     this.hasMore = null;
   }
   onSubmit(f: NgForm) {
+    this.movies = [];
     this.loadMoreBtn = false;
     if (f.valid && f.value.search !== "" && f.value.search !== null && f.value.search !== undefined) {
       this.valid = true;
