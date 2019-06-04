@@ -1,5 +1,5 @@
-<form id="movieFrom" #f="ngForm" (submit)="onSubmit(f)">
-  <input id="search" name="search" type="text" placeholder="search movie..." (ngModel)="inputSearch" minlength="3">
+<form id="movieFrom" (submit)="onSubmit($event , input)">
+  <input id="search"  type="text" placeholder="search movie..." minlength="3" #input>
   <button>Submit</button>
   <div *ngIf="!valid">
     {{errMsg}}
@@ -13,6 +13,6 @@
       <a href="https://www.imdb.com/title/{{movie.imdbID}}" target="_blank">{{movie.Title}}</a>
     </li>
   </ul>
-  <button (click)="loadMore(f)" [disabled]="!hasMore">Load More...</button>
-  <span>page {{page}} from {{numberOfPages}}</span>
+  <button (click)="getMovies()" [disabled]="!hasMore">Load More...</button>
+  <span>page {{page - 1}}</span>
 </div>
