@@ -15,9 +15,14 @@
     text-align: center;
     padding: 10px;
 }
-
-li {
+ul{
+    list-style: none;
+}
+app-movie {
+    width:500px;
     display: flex;
     flex-direction: column;
     text-align: center;
+    align-items: center;
+    word-break: break-all;
 }

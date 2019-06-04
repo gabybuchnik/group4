@@ -9,8 +9,7 @@
 <div id="results" *ngIf="movies.length">
   <ul>
     <li *ngFor="let movie of movies">
-      <img src={{movie.Poster}}>
-      <a href="https://www.imdb.com/title/{{movie.imdbID}}" target="_blank">{{movie.Title}}</a>
+      <app-movie [movie]="movie"></app-movie>
     </li>
   </ul>
   <button (click)="renderMovies()" [disabled]="!hasMore">Load More...</button>

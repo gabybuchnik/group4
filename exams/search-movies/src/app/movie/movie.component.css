@@ -1,0 +1,6 @@
+#details{
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    width: 300px;
+}

@@ -1,0 +1,5 @@
+<img src={{movie.Poster}} (click)="clickImg(movie.imdbID)">
+<a href="https://www.imdb.com/title/{{movie.imdbID}}" target="_blank">{{movie.Title}}</a>
+<div id="details" *ngFor="let detail of details">
+  <span>{{detail}}</span>
+</div>

@@ -34,6 +34,18 @@ export class MovieService {
     const data = await response.json();
     return data;
   }
+  async fetchMoviesDetails(imdbId : string) {
+    const url = searchUrl + `&i=${imdbId}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    const arr = [];
+    for(let key in data){
+      if(data.hasOwnProperty(key)){
+        arr.push(key + ":" + data[key]);
+      }
+    }
+    return arr;
+  }
   loadMovies(data: movie[]) {
     this.movies = this.movies.concat(data);
     this.hasMore = true;
