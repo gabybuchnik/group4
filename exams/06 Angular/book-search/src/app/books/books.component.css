@@ -1,0 +1,41 @@
+#search-book{
+    position: fixed;
+    top: 0;
+    left:0;
+    right:0;
+    background-color:rgb(102, 136, 158);
+    padding: 15px;
+    text-align: center;
+}
+#books{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    border:1px solid;
+}
+#load-more{
+    margin: 20px auto;
+    background-color: rgb(138, 219, 169);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    border:1px solid #ccc;
+    transition: 0.2s all;
+    cursor: pointer;
+}
+#load-more:hover{
+    background-color: rgb(96, 161, 121);
+}
+ul{
+    list-style: none;
+}
+.book{
+    background-color: aliceblue;
+    cursor: pointer;
+    width:600px;
+    transition: 0.2s all;
+}
+.book:hover{
+    background-color: rgb(200, 213, 224);
+}

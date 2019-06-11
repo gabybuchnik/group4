@@ -1,0 +1,11 @@
+<div class="book" (click)="showDeatils()">
+  <div>Title : {{book.volumeInfo.title}}</div>
+  <div>Authors : {{book.volumeInfo.authors}}</div>
+  <a href="{{book.volumeInfo.previewLink}}" target="_blank">{{book.volumeInfo.title}}</a>
+  <div *ngIf="details">
+    <img src="{{book.volumeInfo.imageLinks.thumbnail}}">
+    <div>{{book.volumeInfo.publisher}}</div>
+    <div>{{book.volumeInfo.publishedDate}}</div>
+    <div>{{book.volumeInfo.description}}</div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<form id="search-book" (submit)="serachBook($event)">
+  <input id="search" placeholder="insert book title..." type="text" required minlength="3" #searchInput>
+  <button>Submit</button>
+</form>
+
+<div id="books" *ngIf="books.length">
+  <ul>
+    <li class="book" *ngFor="let book of books">
+      <app-book [book]="book"></app-book>
+    </li>
+    <button id="load-more" (click)="loadMore($event)" [disabled]="!hasMore">Load More</button>
+  </ul>
+</div>
